@@ -1,0 +1,4 @@
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+
+// Add to imports in layout.tsx

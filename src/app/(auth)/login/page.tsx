@@ -1,0 +1,54 @@
+"use client"
+
+import * as React from "react"
+import Link from "next/link"
+import { ArrowRight, Mail, Lock } from "lucide-react"
+
+export default function LoginPage() {
+  return (
+    <div className="min-h-screen pt-20 flex items-center justify-center p-4 relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl -z-10" />
+
+      <div className="max-w-md w-full glass border border-border shadow-2xl rounded-3xl overflow-hidden p-8">
+        <div className="text-center mb-10">
+          <Link href="/" className="inline-flex items-center gap-2 mb-6">
+            <span className="text-2xl font-black text-primary">SHEHAB</span>
+            <span className="text-2xl font-light text-foreground">TECH</span>
+          </Link>
+          <h2 className="text-3xl font-black text-foreground">Welcome Back</h2>
+          <p className="text-foreground/70 mt-2">Log in to your dashboard to view new projects</p>
+        </div>
+
+        <form className="space-y-6">
+          <div className="space-y-2">
+            <label className="text-sm font-semibold">Email Address</label>
+            <div className="relative">
+              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-foreground/40" />
+              <input type="email" className="w-full pl-12 pr-4 py-4 rounded-xl bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="john@example.com" required />
+            </div>
+          </div>
+          
+          <div className="space-y-2">
+            <div className="flex items-center justify-between">
+              <label className="text-sm font-semibold">Password</label>
+              <Link href="/forgot-password" className="text-xs text-primary hover:underline font-medium">Forgot password?</Link>
+            </div>
+            <div className="relative">
+              <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-foreground/40" />
+              <input type="password" className="w-full pl-12 pr-4 py-4 rounded-xl bg-background border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="••••••••" required />
+            </div>
+          </div>
+
+          <button type="submit" className="w-full py-4 bg-primary text-primary-foreground rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 hover:shadow-primary/40 hover:-translate-y-0.5">
+            Log In <ArrowRight className="w-5 h-5" />
+          </button>
+        </form>
+
+        <p className="text-center text-sm text-foreground/60 mt-8">
+          Don't have an account yet? <Link href="/register" className="text-primary font-semibold hover:underline">Register Now</Link>
+        </p>
+      </div>
+    </div>
+  )
+}
